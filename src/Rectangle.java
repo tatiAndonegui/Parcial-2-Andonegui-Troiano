@@ -11,13 +11,11 @@ public class Rectangle extends Shape {
         this.width=width;
         this.lenght=lenght;
     }
-    public Rectangle (  double width, double lenght, String color, boolean filled){
+    public Rectangle (double width, double lenght, String color, boolean filled){
+        super(color,filled);
         this.width=width;
         this.lenght=lenght;
-        this.color=color;
-        this.filled=filled;
     }
-
 
     public double getWidth() {
         return width;
@@ -33,17 +31,17 @@ public class Rectangle extends Shape {
     }
 
     public double getArea(){
-        return this.getWidth() * this.getLenght();
+        return getWidth() * getLenght();
     };
 
     public double getPerimeter(){
-        return 2 * (this.getWidth() + this.getLenght()) ;
+        return 2 * (getWidth() + getLenght()) ;
     };
 
 
     @Override
     public String toString() {
-        return "Rectangle [color=" + filled + lenght + width + "]";
+        return "Rectangle [color= " + super.color + "filled= "+ super.filled +"lenght= "+ lenght + "width=" + width + "]";
     }
 
 }
