@@ -1,20 +1,17 @@
 public class Circle extends Shape{
 
     protected double radius;
-    private double pi = 3.14;
 
-    public Circle (double radius,String color, boolean filled){
-        this.radius=radius;
-        this.color=color;
-        this.filled=filled;
-    }
-    public Circle (double radius){
-        this.radius=radius;
-    }
-
-    public Circle (){
+    public Circle(){
         this.radius=1.0;
     };
+    public Circle(double radius,String color, boolean filled){
+        super(color,filled);
+        this.radius=radius;
+    }
+    public Circle(double radius){
+        this.radius=radius;
+    }
 
 
     public double getRadius() {
@@ -23,26 +20,19 @@ public class Circle extends Shape{
     public void setRadius(double radius) {
         this.radius = radius;
     }
-    public double getPi() {
-        return pi;
-    }
-
-    public void setPi(double pi) {
-        this.pi = pi;
-    }
 
     public double getArea(){
-        return this.getPi() * this.getRadius();
+        return 3.14 * radius;
     };
 
     public double getPerimeter(){
-        return 2 * this.getPi() * this.getRadius() ;
+        return 2 * 3.14 * radius ;
     };
 
 
     @Override
     public String toString() {
-        return "Circle [color=" + filled + radius + "]";
+        return "Circle [color=" + super.color + "filled= " + super.filled + "radius=" + radius + "]";
     }
 
 
